@@ -1,0 +1,4 @@
+name: tenera-event
+recipe: lamp
+config:
+  webroot: .

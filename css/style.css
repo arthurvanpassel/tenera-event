@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "Cambria Bold";
+  src: url("/uploads/fonts/Cambria-Bold.ttf");
+}
+@font-face {
+  font-family: "Cambria Bold Italic";
+  src: url("/uploads/fonts/Cambria-Bold-Italic.ttf");
+}
+@font-face {
+  font-family: "Trade Gothic Bold";
+  src: url("/uploads/fonts/Trade-Gothic-Bold-Condensed.ttf");
+}
+@font-face {
+  font-family: "Trade Gothic Normal";
+  src: url("/uploads/fonts/Trade-Gothic-Normal.ttf");
+}
+
+:root{
+  --color-blue: #80CEC8;
+  --color-orange: #E1733E;
+}
+
+body * {
+  font-family: "Trade Gothic Normal", sans-serif;
+}
+
+/* MAIN */
+sup {vertical-align: super; font-size: 66%;}
+section {margin-bottom: 50px;}
+section.grid {max-width: 1280px; margin: 0 auto 50px; padding: 15px;}
+:is(h2,h3,h4) {font-family: 'Trade Gothic Bold', sans-serif; text-transform: uppercase; color: var(--color-blue); font-size: 50px;}
+:is(h2,h3,h4).orange {color: var(--color-orange); }
+h3 {font-size: 25px;}
+h4 {font-size: 20px; color: black;}
+.renner {position: relative;}
+.renner::after {content: ""; height: 50px; width: 50px; background-image: url(/uploads/img/visuals/fietser-witte-achtergrond.svg); background-size: contain; background-repeat: no-repeat; position: absolute; bottom: calc(100% - 10px); left: calc(50% - 25px); z-index: 1;}
+.renner.orange::after {background-image: url(/uploads/img/visuals/fietser-groen-witte-achtergrond.svg);}
+.renner.front::after {left: 10px;}
+ul.list li {position: relative; padding-left: 20px; font-family: 'Trade Gothic Normal'; font-size: 15px; margin-bottom: 30px; line-height: 1.25;}
+ul.list li::before {content: ""; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border-radius: 5px; background-color: var(--color-blue);}
+.image img {width: 100%; height: auto;}
+.box {border: 5px solid var(--color-blue); padding: 10px 20px; display: inline-block; margin: 25px 0; background-color: white;}
+.box.click {cursor: pointer; text-decoration: none;}
+.box.click:hover {background-color: var(--color-blue);}
+.box.click:hover h3 {color: white;}
+
+
+/* Navigation */
+nav {position: fixed; top: 0; right: 0; z-index: 1; padding: 20px;}
+nav .dots {display: flex; flex-direction: column; align-items: flex-end;}
+nav .dots a {display: block; width: 15px; height: 15px; background-color: var(--color-orange); border-radius: 15px; margin-bottom: 10px;}
+
+/* Section top */
+.blue-banner {background-color: var(--color-blue); display: flex; flex-direction: column; align-items: center; padding: 60px 0; position: relative;}
+.blue-banner img {width: 200px; height: auto;}
+.blue-banner .edition {font-family: 'Trade Gothic Bold', sans-serif; font-size: 30px;}
+.blue-banner .edition {font-family: 'Trade Gothic Bold', sans-serif; font-size: 30px;}
+.blue-banner::after {content: ""; height: 66%; background-image: url(/uploads/img/visuals/strepen-cornered.png); background-size: contain; background-repeat: no-repeat; width: 200px; position: absolute; top: 0; left: 0; z-index: 1;}
+
+.white-banner {display: flex; flex-direction: column; align-items: center; padding: 60px 0 40px;}
+.white-banner * {text-align: center; margin-bottom: 20px;}
+.white-banner h1 {font-family: 'Trade Gothic Bold', sans-serif; font-size: 65px; text-transform: uppercase; }
+.white-banner .subtitle {font-family: 'Cambria Bold', serif; text-transform: uppercase; color: var(--color-orange); font-size: 35px;}
+.white-banner .subtitle-2 {font-family: 'Cambria Bold Italic', serif; font-size: 30px;}
+.white-banner .date {font-family: 'Trade Gothic Bold', sans-serif; font-size: 45px; text-transform: uppercase; color: var(--color-blue);}
+
+.orange-banner {background-color: var(--color-orange); display: flex; flex-direction: column; align-items: center; padding: 60px 0}
+.orange-banner .title {font-family: "Trade Gothic Bold", sans-serif; text-transform: uppercase; font-size: 20px;}
+.orange-banner img {width: 400px; height: auto; max-width: 100%; padding: 0 10px; box-sizing: border-box;}
+
+
+/* Section location */
+section#location {display: flex; gap: 30px;}
+section#location .body {width: 400px;}
+section#location .body h2 {margin-bottom: 40px;}
+
+
+/* Section vip */
+section#vip {display: flex; gap: 30px;}
+section#vip > * {width: 33%;}
+section#vip .blue-box {background-color: var(--color-blue); padding: 40px; color: white; box-sizing: border-box;}
+section#vip .blue-box * {color: white;}
+section#vip > :is(.left, .right) > * {margin-bottom: 20px;}
+section#vip .left .image:not(:last-child) {margin-bottom: 20px;}
+section#vip .center {padding-top: 40px}
+section#vip .double-image {display: flex; gap: 20px;}
+section#vip .double-image > * {width: 50%;}
+section#vip .double-image .image:first-child img {height: 100%; object-fit: cover; object-position: center;}
+
+
+/* Section arrangement */
+section#arrangement {display: flex; flex-direction: column;}
+section#arrangement .body {padding: 0 30px;}
+section#arrangement .columns {column-count: 3; margin-bottom: 25px;}
+section#arrangement li {margin-bottom: 5px;}
+section#arrangement li::before {background-color: var(--color-orange);}
+section#arrangement .prijs {margin-top: 30px;}
+section#arrangement .prijs .label {font-family: "Trade Gothic Bold"; text-transform: uppercase; color: var(--color-orange); font-size: 20px;}
+
+
+/* Section carousel */
+section#carousel .slick-dots button {background-color: var(--color-blue); border-radius: 20px;}
+section#carousel .slick-dots .slick-active button {background-color: var(--color-orange); }
+
+
+/* Section inschrijving */
+section#schrijf-in {display: flex; flex-direction: column; }
+section#schrijf-in > * {margin-bottom: 20px; }
+section#schrijf-in .form-group {display: flex; flex-direction: column; margin-bottom: 15px;}
+section#schrijf-in .form-group label {font-family: 'Trade Gothic Bold'; font-size: 20px; margin: 15px 0 5px;}
+section#schrijf-in .form-group.required label::after {content: " *"; color: var(--color-orange); display: inline;}
+section#schrijf-in .form-group :is(select, input, textarea) {padding: 10px 20px; font-size: 18px;}
+section#schrijf-in p.success {color: var(--color-blue);}
+section#schrijf-in p.error {color: var(--color-orange);}
+section#schrijf-in p.error a {color: var(--color-blue);}
+section#schrijf-in button {background-color: transparent; cursor: pointer;}
+section#schrijf-in button:hover {background-color: var(--color-blue);}
+section#schrijf-in button:hover h3 {color: white;}
+
+
+/* Section sponsors */
+section#sponsors h3 {text-align: center;}
+section#sponsors img:not([data-show="1720"]) {display: none;}
+
+
+/* Footer */
+footer {background-color: var(--color-blue);display: flex; flex-direction: column; align-items: center; padding: 60px 0; }
+footer * {text-align: center; }
+footer h3 {color: black; margin-bottom: 20px;}
+footer a {color: black;}
+footer p {max-width: 750px; margin-bottom: 15px}
+footer a:hover {color: var(--color-orange);}
+
+
+
+/* Mobile */
+@media (max-width: 1024px) {
+  section#sponsors img[data-show="1024"] {display: block;}
+  section#sponsors img:not([data-show="1024"]) {display: none;}
+}
+
+
+@media (max-width:900px) {
+  section#location {flex-direction: column;}
+  section#location .body {width: initial;}
+
+  section#vip {flex-direction: column;}
+  section#vip > * {width: initial;}
+  section#vip .left {display: flex; gap: 20px;}
+  section#vip .left > * {width: 50%;}
+  section#vip .center {padding-top: 0;}
+
+  section#arrangement .columns {column-count: 2;}
+}
+
+@media (max-width: 768px) {
+  section#sponsors img[data-show="768"] {display: block;}
+  section#sponsors img:not([data-show="768"]) {display: none;}
+}
+
+@media (max-width:600px) {
+  section#vip .left {flex-direction: column;}
+  section#vip .left > * {width: initial;}
+  section#vip .left .blue-box {margin: 0;}
+
+  section#arrangement .body {padding: 0;}
+  section#arrangement .columns {column-count: 1;}
+}
+
+@media (max-width: 500px) {
+  section#sponsors img[data-show="500"] {display: block;}
+  section#sponsors img:not([data-show="500"]) {display: none;}
+}
+
+@media (max-width: 320px) {
+  section#sponsors img[data-show="320"] {display: block;}
+  section#sponsors img:not([data-show="320"]) {display: none;}
+}
