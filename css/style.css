@@ -25,7 +25,7 @@ body * {
 }
 
 /* MAIN */
-sup {vertical-align: super; font-size: 66%;}
+sup {vertical-align: super; font-size: 66%; font-family: inherit;}
 section {margin-bottom: 50px;}
 section.grid {max-width: 1280px; margin: 0 auto 50px; padding: 15px;}
 :is(h2,h3,h4) {font-family: 'Trade Gothic Bold', sans-serif; text-transform: uppercase; color: var(--color-blue); font-size: 50px;}
@@ -60,7 +60,11 @@ nav .dots a {display: block; width: 15px; height: 15px; background-color: var(--
 .white-banner {display: flex; flex-direction: column; align-items: center; padding: 60px 0 40px;}
 .white-banner * {text-align: center; margin-bottom: 20px;}
 .white-banner h1 {font-family: 'Trade Gothic Bold', sans-serif; font-size: 65px; text-transform: uppercase; }
-.white-banner .subtitle {font-family: 'Cambria Bold', serif; text-transform: uppercase; color: var(--color-orange); font-size: 35px;}
+.white-banner .subtitle {font-family: 'Cambria Bold', serif; text-transform: uppercase; color: var(--color-orange); font-size: 35px; position: relative; padding: 0 50px;}
+.white-banner .subtitle::before, 
+.white-banner .subtitle::after {content: "—"; position: absolute; top: calc(50% - 17.5px)}
+.white-banner .subtitle:before {left: 0;}
+.white-banner .subtitle:after {right: 0;}
 .white-banner .subtitle-2 {font-family: 'Cambria Bold Italic', serif; font-size: 30px;}
 .white-banner .date {font-family: 'Trade Gothic Bold', sans-serif; font-size: 45px; text-transform: uppercase; color: var(--color-blue);}
 
@@ -159,6 +163,7 @@ footer a:hover {color: var(--color-orange);}
 }
 
 @media (max-width:600px) {
+  section#top .white-banner > *:not(.subtitle) {padding: 0 10px;}
   section#vip .left {flex-direction: column;}
   section#vip .left > * {width: initial;}
   section#vip .left .blue-box {margin: 0;}
