@@ -104,6 +104,7 @@ section#arrangement .prijs .label {font-family: "Trade Gothic Bold"; text-transf
 
 /* Section carousel */
 section#carousel .slick-dots button {background-color: var(--color-blue); border-radius: 20px;}
+section#carousel .slick-dots button::before {color: transparent;}
 section#carousel .slick-dots .slick-active button {background-color: var(--color-orange); }
 
 
