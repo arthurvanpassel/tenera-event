@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if (!empty($_POST)) {
   $errors = [];
@@ -10,7 +10,7 @@ if (!empty($_POST)) {
     'telefoon' => ['required'],
     'aantal' => ['required']
   ];
-  
+
   foreach ($_POST as $key => $value) {
     if (array_key_exists($key, $validation)) {
       if (in_array('required', $validation[$key]) && empty($value)) {
@@ -20,20 +20,20 @@ if (!empty($_POST)) {
       }
     }
   }
-  
+
   if (empty($errors)) {
-    $aanspreking = $_POST['aanspreking']; 
-    $voornaam = $_POST['voornaam']; 
-    $achternaam = $_POST['achternaam']; 
-    $email = $_POST['e-mail']; 
-    $telefoon = $_POST['telefoon']; 
-    $aantal = $_POST['aantal']; 
+    $aanspreking = $_POST['aanspreking'];
+    $voornaam = $_POST['voornaam'];
+    $achternaam = $_POST['achternaam'];
+    $email = $_POST['e-mail'];
+    $telefoon = $_POST['telefoon'];
+    $aantal = $_POST['aantal'];
     $opmerkingen = $_POST['opmerkingen'];
-    
+
     $to = 'peter.ottevaere@telenet.be';
     // $to = 'arthurvanpassel@hotmail.com';
-  
-    $email_subject = "Tenera event inschrijving: ".$_POST['voornaam']." ".$_POST['achternaam'];
+
+    $email_subject = "Tenera event inschrijving: " . $_POST['voornaam'] . " " . $_POST['achternaam'];
     $email_body = "
       Aanspreking: $aanspreking \n
       Voornaam: $voornaam \n
@@ -42,8 +42,8 @@ if (!empty($_POST)) {
       Telefoon: $telefoon \n
       Aantal personen: $aantal \n
       Vragen / opmerkingen: $opmerkingen \n
-    "; 
-    
+    ";
+
     $emailSent = mail($to, $email_subject, $email_body);
     if ($emailSent) {
       $referer = $_SERVER['HTTP_ORIGIN'];
@@ -52,7 +52,7 @@ if (!empty($_POST)) {
       $referer = $_SERVER['HTTP_ORIGIN'];
       header("Location: $referer?errorMail=true");
     }
-  }  else {
+  } else {
     $error_string = "";
     $fields_string = "";
     foreach ($errors as $key => $value) {
@@ -64,8 +64,7 @@ if (!empty($_POST)) {
     $referer = $_SERVER['HTTP_ORIGIN'];
     header("Location: $referer?errors=$error_string&fields=$fields_string");
   }
-}
-else {
+} else {
   $referer = $_SERVER['SERVER_NAME'];
   header("Location: //$referer");
 }

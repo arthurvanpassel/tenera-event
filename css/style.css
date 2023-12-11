@@ -40,6 +40,7 @@ ul.list li {position: relative; padding-left: 20px; font-family: 'Trade Gothic N
 ul.list li::before {content: ""; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border-radius: 5px; background-color: var(--color-blue);}
 .image img {width: 100%; height: auto;}
 .box {border: 5px solid var(--color-blue); padding: 10px 20px; display: inline-block; margin: 25px 0; background-color: white;}
+.box.renner::after {bottom: calc(100% + 5px); left: 20px;}
 .box.click {cursor: pointer; text-decoration: none;}
 .box.click:hover {background-color: var(--color-blue);}
 .box.click:hover h3 {color: white;}
@@ -53,7 +54,6 @@ nav .dots a {display: block; width: 15px; height: 15px; background-color: var(--
 /* Section top */
 .blue-banner {background-color: var(--color-blue); display: flex; flex-direction: column; align-items: center; padding: 60px 0; position: relative;}
 .blue-banner img {width: 200px; height: auto;}
-.blue-banner .edition {font-family: 'Trade Gothic Bold', sans-serif; font-size: 30px;}
 .blue-banner .edition {font-family: 'Trade Gothic Bold', sans-serif; font-size: 30px;}
 .blue-banner::after {content: ""; height: 66%; background-image: url(/uploads/img/visuals/strepen-cornered.png); background-size: contain; background-repeat: no-repeat; width: 200px; position: absolute; top: 0; left: 0; z-index: 1;}
 
@@ -93,14 +93,17 @@ section#vip .double-image .image:first-child img {height: 100%; object-fit: cove
 
 
 /* Section arrangement */
-section#arrangement {display: flex; flex-direction: column;}
-section#arrangement .body {padding: 0 30px;}
-section#arrangement .columns {column-count: 3; margin-bottom: 25px;}
-section#arrangement li {margin-bottom: 5px;}
-section#arrangement li::before {background-color: var(--color-orange);}
-section#arrangement .prijs {margin-top: 30px;}
-section#arrangement .prijs .label {font-family: "Trade Gothic Bold"; text-transform: uppercase; color: var(--color-orange); font-size: 20px;}
-
+section.arrangement {display: flex; flex-direction: column;}
+section.arrangement .body {padding: 0 30px;}
+section.arrangement .columns {column-count: 3; margin-bottom: 25px;}
+section.arrangement li {margin-bottom: 5px;}
+section.arrangement li::before {background-color: var(--color-orange);}
+section.arrangement .prijs {margin-top: 30px;}
+section.arrangement .prijs .label {font-family: "Trade Gothic Bold", sans-serif; text-transform: uppercase; color: var(--color-orange); font-size: 20px;}
+section.arrangement .multiple_images {display: flex;}
+section.arrangement .multiple_images > * {height: auto;object-fit: cover;}
+section.arrangement .multiple_images > :is(:first-child, :nth-child(2)) {width: calc(100% / 3); aspect-ratio: 1; }
+section.arrangement .multiple_images > :is(:nth-child(4), :nth-child(3)) {width: calc(100% / 6); aspect-ratio: 1/2;}
 
 /* Section carousel */
 section#carousel .slick-dots button {background-color: var(--color-blue); border-radius: 20px;}
@@ -112,7 +115,7 @@ section#carousel .slick-dots .slick-active button {background-color: var(--color
 section#schrijf-in {display: flex; flex-direction: column; }
 section#schrijf-in > * {margin-bottom: 20px; }
 section#schrijf-in .form-group {display: flex; flex-direction: column; margin-bottom: 15px;}
-section#schrijf-in .form-group label {font-family: 'Trade Gothic Bold'; font-size: 20px; margin: 15px 0 5px;}
+section#schrijf-in .form-group label {font-family: 'Trade Gothic Bold', sans-serif; font-size: 20px; margin: 15px 0 5px;}
 section#schrijf-in .form-group.required label::after {content: " *"; color: var(--color-orange); display: inline;}
 section#schrijf-in .form-group :is(select, input, textarea) {padding: 10px 20px; font-size: 18px;}
 section#schrijf-in p.success {color: var(--color-blue);}
@@ -155,7 +158,7 @@ footer a:hover {color: var(--color-orange);}
   section#vip .left > * {width: 50%;}
   section#vip .center {padding-top: 0;}
 
-  section#arrangement .columns {column-count: 2;}
+  section.arrangement .columns {column-count: 2;}
 }
 
 @media (max-width: 768px) {
@@ -169,8 +172,8 @@ footer a:hover {color: var(--color-orange);}
   section#vip .left > * {width: initial;}
   section#vip .left .blue-box {margin: 0;}
 
-  section#arrangement .body {padding: 0;}
-  section#arrangement .columns {column-count: 1;}
+  section.arrangement .body {padding: 0;}
+  section.arrangement .columns {column-count: 1;}
 }
 
 @media (max-width: 500px) {
